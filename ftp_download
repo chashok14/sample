@@ -1,0 +1,15 @@
+from ftplib import FTP
+
+ftp = FTP('10.96.43.135')
+ftp.login(user='wmrsn', passwd='Newpass8')
+
+ftp.cwd('/home/wmrsn/ashok')
+
+def grabFile():
+    filename = 'Sep_22'
+    localfile = open(filename, 'wb')
+    ftp.retrbinary('RETR' + filename, localfile.write, 1024)
+    ftp.quit()
+    localfile.close()
+
+grabFile()
