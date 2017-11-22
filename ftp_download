@@ -12,4 +12,4 @@ def grabFile():
     ftp.quit()
     localfile.close()
 
-grabFile()
+grabFile() # calling function
